@@ -11,7 +11,7 @@ For our simplified PIC code, two data structures are implemented. We have (1) a 
 
 Parallelism in the CUDA kernel is achieved by assigning one thread to one particle, and processing BLOCK_SIZE (the number of threads in a CUDA threadblock) number of particles at a time until all particles have been processed. I.e.
 
-```
+```c++
   part_idx = thread_index + block_index*threads_per_block
   while (part_idx < n_particles){
 		deposit charge
